@@ -1,0 +1,14 @@
+package com.example.service;
+
+import com.example.pojo.Category;
+
+@Service
+public class CategoryImpl implements CategoryService {
+
+	@Override
+	public Category getCategory(Category catgories) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

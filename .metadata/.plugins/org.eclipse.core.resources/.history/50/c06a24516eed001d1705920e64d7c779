@@ -1,0 +1,10 @@
+//package com.example.service;
+//
+//import com.example.pojo.Category;
+//import com.example.pojo.Product;
+//
+//public interface CategoryService {
+//
+//boolean addBook(Product pro);
+//
+//}

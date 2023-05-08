@@ -1,0 +1,28 @@
+package com.example.service;
+
+
+import org.springframework.stereotype.Service;
+
+import com.example.pojo.Category;
+import com.example.repo.Categoryepo;
+
+@Service
+public class CategoryImpl implements CategoryService {
+
+	
+	private Categoryepo categoryepo;
+	
+	
+	public CategoryImpl(Categoryepo categoryepo) {
+		super();
+		this.categoryepo = categoryepo;
+	}
+
+
+	@Override
+	public Category getCategory(Category catgories) {
+		// TODO Auto-generated method stub
+		return categoryepo.save((S) catgories);
+	}
+
+}

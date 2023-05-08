@@ -1,0 +1,47 @@
+package com.example.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.pojo.Category;
+import com.example.repo.Categoryepo;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/categories")
+public class CategoryController {
+    @Autowired
+    private Categoryepo repo;
+
+    @GetMapping("")
+    public List<Category> getAllCategories() {
+        return repo.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Category getCategoryById(@PathVariable Long id) {
+        return categoryRepository.findById(id).orElse(null);
+    }
+
+    @PostMapping("")
+    public Category addCategory(@RequestBody Category category) {
+        return categoryRepository.save(category);
+    }
+
+    @PutMapping("/{id}")
+    public Category updateCategory(@PathVariable Long id, @RequestBody Category updatedCategory) {
+        Category categoryToUpdate = categoryRepository.findById(id).orElse(null);
+
+        if (categoryToUpdate != null) {
+            categoryToUpdate.setName(updatedCategory.getName());
+        }
+
+        return categoryRepository.save(categoryToUpdate);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCategory(@PathVariable Long id) {
+        categoryRepository.deleteById(id);
+    }
+}

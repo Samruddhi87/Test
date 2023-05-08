@@ -1,0 +1,29 @@
+package com.example.pojo;
+
+public class Category {
+
+	private String comedy;
+	private String horror;
+	private String historical;
+	public String getComedy() {
+		return comedy;
+	}
+	public void setComedy(String comedy) {
+		this.comedy = comedy;
+	}
+	public String getHorror() {
+		return horror;
+	}
+	public void setHorror(String horror) {
+		this.horror = horror;
+	}
+	public String getHistorical() {
+		return historical;
+	}
+	public void setHistorical(String historical) {
+		this.historical = historical;
+	}
+	
+	
+	
+}
